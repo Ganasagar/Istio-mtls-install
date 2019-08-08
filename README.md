@@ -61,6 +61,8 @@ Further Advanced instllation:
 # Enabling SDS
 helm template install/kubernetes/helm/istio --name istio --namespace istio-system --values install/kubernetes/helm/istio/values-istio-sds-auth.yaml | kubectl apply -f -
 
+# --set global.outboundTrafficPolicy.mode=REGISTRY_ONLY . Istio proxy blocks any host without an HTTP service or service entry defined within the mesh
+
 # Update the ingress-gateway deployment to use the sds 
 
 ```bash
